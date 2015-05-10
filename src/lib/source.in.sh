@@ -3,6 +3,7 @@
 collect_source()
 {
     (
+        tmpfile=$(mktemp $appname.XXXXX)
         verbose 'opening pkgbuild'
         # parse pkgbuild for a files that belong to the pkg that are local
         . $pkgbuild
@@ -29,9 +30,9 @@ collect_source()
         
         verbose "changelog file found${changelog+ not}"
         
-        echo "source=( ${source[*]} )" > tmp_source.sh
+        echo "source=( ${source[*]} )" > $tmpfile
         
     )
-    . $PWD/tmp_source.sh
-    rm $PWD/tmp_source.sh
+    . $tmpfile
+    rm $tmpfile
 }
