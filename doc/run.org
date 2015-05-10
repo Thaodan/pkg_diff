@@ -1,0 +1,50 @@
+#+TITLE: pkg_diff run
+this document discribes how pkg_diff runs and what is does._
+
+* Init 
+** Config 
+First config is readed either of: 
+#+BEGIN_SRC sh
+$HOME/.config/pkg_diff.conf
+#+END_SRC
+or
+#+BEGIN_SRC sh
+$PWD/.pkg_diff.conf
+#+END_SRC
+Or nowhere if none of them are present.
+For it's content see: [[./config.org][config]]
+** Parse Options
+   Then options are parsed as described in the options files in /src/options/.
+   This is an example opt file:
+#+BEGIN_SRC sh
+# options:
+# -P        use pager
+# -C        colored output
+# -d  <arg> diff args
+# -l  <arg> less args 
+args=sPCd:l:
+arg_func=option_diff
+option_diff()
+{
+    case $arg in
+        P) pager=true ;;
+        C) color=true ;;
+        d) diff_args="$OPTARG";;
+        l) less_args="$OPTARG" ;;
+    esac
+}
+#+END_SRC
+First the /args/ var is stored in the global args var, 
+same as for the arg_func var.
+
+Than the actual arguments are taken and checked if 
+valid against the parsed /args/.
+
+After this all parsed arg func are called to do their job for each parsed arg.
+* Prepare 
+Each file as present in the pkgbuild is downloaded to the target dir as set in 
+/lib/conf/.
+* Diff Part
+Diff downloaded files by original files
+* Destroy/End
+Remove downloaded target dirs.

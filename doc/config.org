@@ -1,0 +1,9 @@
+#+TITLE: config
+Info about config file
+
+* Vars 
+
++ pkgbuild :: set PKGBUILD file if it's not /$PWD/PKGBUILD/
++ source_url :: set url from where all source files are downloaded (mandatory)
+
+

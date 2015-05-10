@@ -1,0 +1,15 @@
+#!/bin/bash
+# c config file
+# o set raw option
+args=e
+arg_func=option_cache
+option_cache()
+{
+    echo $arg
+    case $arg in
+        e) cache=t;
+    esac
+}
+help_msg=" 
+-e 
+"
