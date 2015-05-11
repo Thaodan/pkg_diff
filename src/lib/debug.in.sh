@@ -6,7 +6,8 @@
 clean_up()
 {
     if [ ! $keep ] ; then
-        rm -rf $target_dir
+        rm -rf $target_dir_local
+        rm -rf $target_dir_remote
     fi
 }
 verbose()
