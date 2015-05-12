@@ -1,4 +1,5 @@
 #!/bin/bash
+appname=${0##*/}
 . @libdir@/debug
 . @libdir@/parse_options
 . @libdir@/conf
