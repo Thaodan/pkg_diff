@@ -1,22 +1,22 @@
 #!/bin/bash
+
 download()
 {
-    local curl_options
-    if [ ! $msg ] ; then
-        curl_options=--silent
-    else
-        printf "$1:"
-        curl_options=--progress-bar
-    fi
+    local curl_options 
     case $source_url in
         *%s*)
             local source_url=$(echo $source_url | sed "s|%s|$1|")
-            curl $curl_options $source_url -o $1
         ;;
         *)
-            curl --remote-name $source_url/$1 -o $1
+            local source_url=$source_url/$1
             ;;
     esac
+    if [ $msg ] ; then
+        curl $curl_options --progress-bar --remote-name $source_url -o $1 
+    else
+        curl $curl_options --silent --remote-name $source_url -o $1
+              
+    fi
 }
 
 # taken from arch linux makepkg
