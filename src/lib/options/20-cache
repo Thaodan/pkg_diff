@@ -1,13 +1,14 @@
 #!/bin/bash
-# c config file
-# o set raw option
-args=e
+# e use existing cache
+# k keep cache
+args=ek
 arg_func=option_cache
 option_cache()
 {
     echo $arg
     case $arg in
-        e) cache=t;
+        e) cache=t;;
+        k) keep=t ;;
     esac
 }
 help_msg=" 

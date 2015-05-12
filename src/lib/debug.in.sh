@@ -1,15 +1,7 @@
 #!/bin/sh
 # global vars:
-# keep: if set keep new sources
 # verbose: be verbose if set
 # chatty: just be chatty but didn't talk to much
-clean_up()
-{
-    if [ ! $keep ] ; then
-        rm -rf $target_dir_local
-        rm -rf $target_dir_remote
-    fi
-}
 verbose()
 {
     if [ $verbose ] ; then
