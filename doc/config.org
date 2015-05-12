@@ -4,6 +4,7 @@ Info about config file
 * Vars 
 
 + pkgbuild :: set PKGBUILD file if it's not /$PWD/PKGBUILD/
-+ source_url :: set url from where all source files are downloaded (mandatory)
-
++ source_url :: set url from where all source files are downloaded (mandatory), 
+                may contain %s to be replaced by the actual source file name when file name can't
+                be appended
 
