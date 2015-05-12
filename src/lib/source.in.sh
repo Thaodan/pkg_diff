@@ -2,8 +2,8 @@
 
 collect_source()
 {
-    (
-        tmpfile=$(mktemp $appname.XXXXX)
+    tmpfile=$(mktemp $appname.XXXXX)
+    ( 
         verbose 'opening pkgbuild'
         # parse pkgbuild for a files that belong to the pkg that are local
         . $pkgbuild
