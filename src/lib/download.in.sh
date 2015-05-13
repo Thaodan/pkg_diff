@@ -12,9 +12,9 @@ download()
             ;;
     esac
     if [ $msg ] ; then
-        curl $curl_options --progress-bar --remote-name $source_url -o $1 
+        curl $curl_options --progress-bar  $source_url -o $1 
     else
-        curl $curl_options --silent --remote-name $source_url -o $1
+        curl $curl_options --silent  $source_url -o $1
               
     fi
 }
