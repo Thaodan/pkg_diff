@@ -41,7 +41,7 @@ if [ ! $cache ] ; then
     msg 'getting sources'
     verbose 'first pkgbuild'
     download ${pkgbuild##*/}
-    collect_source
+    pkgbuild=$PWD/${pkgbuild##*/} collect_source
     verbose 'then download all other sources'
     for src in ${source[*]} ; do
         if [ $(get_protocol "$src") = local ] ; then
