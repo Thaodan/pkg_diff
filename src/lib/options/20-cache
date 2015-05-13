@@ -5,7 +5,6 @@ args=ek
 arg_func=option_cache
 option_cache()
 {
-    echo $arg
     case $arg in
         e) cache=t;;
         k) keep=t ;;
