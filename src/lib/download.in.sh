@@ -51,6 +51,11 @@ if [ ! $cache ] ; then
             verbose "$src is not local skipping"
         fi
     done
+    source+=( ${pkgbuild##*/} )
+    if [ $skip_local_only_sources ] ; then
+        # save remote_sources for later
+        source_remote=( "${source[@]}" )
+    fi
     unset src
 else
     msg 'warning using existing files'
