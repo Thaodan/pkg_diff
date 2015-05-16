@@ -8,3 +8,4 @@ appname=${0##*/}
 . @libdir@/download
 . @libdir@/prepare_local
 . @libdir@/diff
+clean_up
