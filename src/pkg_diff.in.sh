@@ -1,5 +1,6 @@
 #!/bin/bash
 appname=${0##*/}
+ver=@VER@
 . @libdir@/debug
 . @libdir@/parse_options
 . @libdir@/conf

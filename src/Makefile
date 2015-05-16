@@ -1,11 +1,13 @@
 include ../rules.mk
-USE_VER	     	 	= 3.3
+VER	     	 	= 0.1
 GIT_REV    		= $(shell ./../tools/git_revgen)
 SCRIPTS			= pkg_diff
 all: $(SCRIPTS) lib
 
 $(SCRIPTS): ${SCRIPTS:=.in.sh} 
-	$(SHPP) $(SHPPFLAGS) -Dlibdir=$(libdir)/$(APPNAME) $(@).in.sh  -o $@
+	$(SHPP) $(SHPPFLAGS) -DVER=$(VER) \
+		-Dlibdir=$(libdir)/$(APPNAME) \
+		$(@).in.sh  -o $@
 
 #config.shh: 
 #	@echo $@: generating 
