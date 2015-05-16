@@ -5,7 +5,7 @@
 verbose()
 {
     if [ $verbose ] ; then
-        echo $@ >2&
+        echo $@ >&2
     fi
 }
 msg()
@@ -16,7 +16,7 @@ msg()
 }
 warn()
 {
-    echo $@ >2&
+    echo $@ >&2
 }
 
 error()
