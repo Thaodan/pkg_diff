@@ -1,9 +1,10 @@
 #!/bin/sh
-# options:
+#help_begin
 # -P        use pager
 # -C        colored output
 # -d  <arg> diff args
-# -l  <arg> less args 
+# -l  <arg> less args
+#help_end
 args=sPCd:l:
 arg_func=option_diff
 option_diff()
