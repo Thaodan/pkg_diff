@@ -1,4 +1,4 @@
-# -*- sh -*
+# -*- sh -*-
 # -L skip local only sources 
 args=L
 arg_func=option_prepare_local
