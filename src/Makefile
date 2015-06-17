@@ -27,4 +27,4 @@ install_bin: $(SCRIPTS)
 clean:
 	rm -f $(SCRIPTS)
 	$(MAKE) -C lib clean
-.PHONY: all clean lib install
+.PHONY: clean lib install
