@@ -1,7 +1,7 @@
 include ../../../rules.mk
 
 SCRIPTS    = 0-conf  20-diff  5-debug 20-cache \
-		20-prepare_local
+		20-prepare_local 50-help
 
 all: $(SCRIPTS)
 

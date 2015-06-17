@@ -1,6 +1,8 @@
 #!/bin/bash
-# e use existing cache
-# k keep cache
+#help_begin
+# -e use existing cache
+# -k keep cache
+#help_end
 args=ek
 arg_func=option_cache
 option_cache()
@@ -10,6 +12,4 @@ option_cache()
         k) keep=t ;;
     esac
 }
-help_msg=" 
--e 
-"
+

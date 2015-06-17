@@ -1,10 +1,9 @@
 #!/bin/sh
-#\\options_begin
-# options:
+#help_begin
 # -D : debug enable debug mode
 # -V : enable verbose mode
 # -m : be chatty
-#\\options_end
+#help_end
 args=DVm
 arg_func=option_debug
 option_debug()
