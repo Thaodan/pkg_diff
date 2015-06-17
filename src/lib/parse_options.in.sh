@@ -21,7 +21,7 @@ unset args
 unset arg_func
 
 # parse input for given options and enable given stuff
-while getopts $real_args arg ; do
+while getopts $real_args arg || exit ; do
     old_IFS=$IFS
     IFS=:
     for arg_func in $arg_funcs ; do
