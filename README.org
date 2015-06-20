@@ -1,0 +1,18 @@
+*  INTRO 
+
+This is a script to compare between two PKGBUILDs and its (local) sources.
+*  DEPENCIES 
+  - bash
+
+* BUILD DEPENCIES
+ - shpp [2] (you can use WBUILTIN_SHPP=1 if don't want to install shpp)
+ 
+* BUILD AND INSTALL 
+
+See [[./INSTALL.org]]
+
+
+*  DOC 
+See doc/
+
+[2] https://github.com/Thaodan/shpp

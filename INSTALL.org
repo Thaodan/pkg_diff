@@ -1,0 +1,8 @@
+* BUILDING 
+#+BEGIN_SRC sh
+make
+#+END_SRC
+* INSTALLING
+#+BEGIN_SRC sh
+make install 
+#+END_SRC
