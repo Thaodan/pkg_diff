@@ -13,12 +13,18 @@ all stuff to set options
 Set these things:
 + args :: all options, syntax is just like in getopts (var)
 + arg_func :: name of the functions where args are parsed , gets no options
+
+Optional add a help text, like below.
 ****  arg function
 Basicly a function that just contains a /case/ /esac/ and some /if/s.
 Public var to get current is /arg/, don't modify it.
 **** Example
 #+BEGIN_SRC sh
 #!/bin/sh
+#help_begin
+# -l do bla
+# -a do bo
+#help_end
 args=la
 arg_func=la_parse
 la_parse()
