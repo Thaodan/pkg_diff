@@ -14,26 +14,9 @@ $PWD/.pkg_diff.conf
 Or nowhere if none of them are present.
 For it's content see: [[./config.org][config]]
 ** Parse Options
-   Then options are parsed as described in the options files in /src/options/.
-   This is an example opt file:
-#+BEGIN_SRC sh
-# options:
-# -P        use pager
-# -C        colored output
-# -d  <arg> diff args
-# -l  <arg> less args 
-args=sPCd:l:
-arg_func=option_diff
-option_diff()
-{
-    case $arg in
-        P) pager=true ;;
-        C) color=true ;;
-        d) diff_args="$OPTARG";;
-        l) less_args="$OPTARG" ;;
-    esac
-}
-#+END_SRC
+Then options are parsed as described in the options files in /src/options/.
+For an example see [[./structure.org::Example][here]]
+
 First the /args/ var is stored in the global args var, 
 same as for the arg_func var.
 
