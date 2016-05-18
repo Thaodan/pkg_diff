@@ -1,0 +1,3 @@
+#!/bin/sh -e
+#\\include @libdir@/options/50-help.in.sh
+__parse_help
