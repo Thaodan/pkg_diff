@@ -26,8 +26,8 @@ __parse_help()
 {
     local file 
     for file in @libdir@/options/*  ; do
-        grep -Pzo "(?s)(?<=^#help_begin$\n).*?(?=\n^\#help_end$)" $file | \
-            sed -e 's/^#//g'
+        grep -Pzo "#help_begin[\s\S]*?#help_end" $file | \
+             sed -e 's/^#//g' -e '/help_.*/d'
     done
 }
 
