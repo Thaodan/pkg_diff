@@ -1,6 +1,8 @@
 #+TITLE: pkg_diff run
 this document discribes how pkg_diff runs and what is does._
-
+* Intro 
+Everything is set up as module. For example the source download part is just a module 
+that contains other modules.
 * Init 
 ** Config 
 First config is readed either of: 
@@ -24,10 +26,11 @@ Than the actual arguments are taken and checked if
 valid against the parsed /args/.
 
 After this all parsed arg func are called to do their job for each parsed arg.
-* Prepare 
-Each file as present in the pkgbuild is downloaded to the target dir as set in 
-/lib/conf/.
-* Diff Part
-Diff downloaded files by original files
+* Run
+There's no difference between local and remote source anymore. Each source is prepared
+and than compared against each other.
+The source can be vcs, a set of remote files or a local. 
+
 * Destroy/End
 Remove downloaded target dirs.
+
