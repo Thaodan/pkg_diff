@@ -11,7 +11,7 @@ fi
 source $conf_file || die 'error while loading conf file'
 # if pkgbuild is not set use from pwd
 if [ ! $pkgbuild ] ; then
-    pkgbuild=$PWD/PKGBUILD
+    pkgbuild=$PWD/PKGBUILD #FIXME
 fi
 
 if [ ! $source_url ] ; then

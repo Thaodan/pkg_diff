@@ -3,7 +3,12 @@ VER	     	 	= $(shell ./../tools/git_revgen)
 SCRIPTS			= pkg_diff
 all: $(SCRIPTS) lib
 
-$(SCRIPTS): ${SCRIPTS:=.in.sh} 
+config.shh: 
+	@echo $@: generating 
+	@echo '#\\define VER=$(VER)' > $@
+	@echo '#\\define libdir=$(libdir)' >> $@
+
+$(SCRIPTS): ${SCRIPTS:=.in.sh} config.shh
 	$(SHPP) $(SHPPFLAGS) -DVER=$(VER) \
 		-Dlibdir=$(libdir)/$(APPNAME) \
 		$(@).in.sh  -o $@

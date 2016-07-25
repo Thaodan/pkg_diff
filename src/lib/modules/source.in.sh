@@ -1,9 +1,11 @@
 #!/bin/bash
+#\\include ../../config.shh
 # -*- bash -*-
 [ -n "$PKG_DIFF_SOURCE" ] && return
 PKG_DIFF_SOURCE=1
 
-#\\import utils/message
+source @libdir@/message
+
 
 # constants
 SOURCEDIR=$TMPDIR/source
