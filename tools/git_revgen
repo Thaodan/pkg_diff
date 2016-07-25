@@ -1,0 +1,2 @@
+#!/bin/sh
+git describe --always --long | sed -E 's/([^-]*-g)/r\1/;s/-/./g;s/^v//'
