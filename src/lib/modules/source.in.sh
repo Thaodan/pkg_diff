@@ -1,6 +1,7 @@
 #!/bin/bash
 # -*- bash -*-
-#\\include_guard
+[ -n "$PKG_DIFF_SOURCE" ] && return
+PKG_DIFF_SOURCE=1
 
 #\\import utils/message
 
