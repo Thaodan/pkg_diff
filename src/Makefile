@@ -1,6 +1,5 @@
 include ../rules.mk
-VER	     	 	= 0.1
-GIT_REV    		= $(shell ./../tools/git_revgen)
+VER	     	 	= $(shell ./../tools/git_revgen)
 SCRIPTS			= pkg_diff
 all: $(SCRIPTS) lib
 
