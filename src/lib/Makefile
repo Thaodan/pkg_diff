@@ -1,5 +1,5 @@
 include ../../rules.mk
-SCRIPTS 	= parse_options debug\
+SCRIPTS 	= parse_options debug message \
 			prepare_local download
 
 all: $(SCRIPTS) options
