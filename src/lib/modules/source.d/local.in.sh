@@ -3,7 +3,7 @@
 [ -n "$PKG_DIFF_SOURCE_LOCAL" ] && return
 PKG_DIFF_SOURCE_LOCAL=1
 
-#\\import lib/message
+source @libdir@/message
 
 source_get()
 {
