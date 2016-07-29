@@ -46,3 +46,11 @@ error() {
 	local mesg=$1; shift
 	printf "${RED}==> $(gettext "ERROR:")${ALL_OFF}${BOLD} ${mesg}${ALL_OFF}\n" "$@" >&2
 }
+
+
+die()
+{
+    error "$@"
+    clean_up
+    exit 1
+}
