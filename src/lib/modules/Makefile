@@ -10,8 +10,8 @@ $(SCRIPTS): ${SCRIPTS:=.in.sh} ../../config.shh
 	$(SHPP) $(SHPPFLAGS) -Dlibdir=$(libdir)/$(APPNAME) $(@).in.sh -o $(@)
 
 
-install: install_lib install_options	
-install_lib: $(SCRIPTocS) 
+install: install_modules	
+install_modules: $(SCRIPTS) 
 	$(INSTALL) -dm755 $(libdir)/$(APPNAME)
 	$(INSTALL) -Dm644 $(^) $(libdir)/$(APPNAME)
 
