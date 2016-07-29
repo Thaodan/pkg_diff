@@ -1,5 +1,5 @@
 include ../../../rules.mk
-SCRIPTS 	= source conf cache
+SCRIPTS 	= source conf cache diff
 
 all: $(SCRIPTS) 
 

@@ -7,5 +7,4 @@ else
     diff=diff
 fi
 
-
 $diff $diff_args $target_dir_local $target_dir_remote 
