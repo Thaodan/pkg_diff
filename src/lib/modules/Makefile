@@ -7,7 +7,7 @@ all: $(SCRIPTS) source.d
 	$(MAKE) -C ../.. config.shh
 
 $(SCRIPTS): ${SCRIPTS:=.in.sh} ../../config.shh
-	$(SHPP) $(SHPPFLAGS) -Dlibdir=$(libdir)/$(APPNAME) $(@).in.sh -o $(@)
+	$(SHPP) $(SHPPFLAGS) $(@).in.sh -o $(@)
 
 source.d:
 	make -C source.d

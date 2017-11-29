@@ -9,8 +9,7 @@ config.shh:
 	@echo '#\\define libdir=$(libdir)' >> $@
 
 $(SCRIPTS): ${SCRIPTS:=.in.sh} config.shh
-	$(SHPP) $(SHPPFLAGS) -DVER=$(VER) \
-		-Dlibdir=$(libdir)/$(APPNAME) \
+	$(SHPP) $(SHPPFLAGS)\
 		$(@).in.sh  -o $@
 
 lib: 

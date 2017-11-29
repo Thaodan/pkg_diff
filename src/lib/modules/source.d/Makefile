@@ -4,7 +4,7 @@ SCRIPTS    = git local
 all: $(SCRIPTS)
 
 $(SCRIPTS): ${SCRIPTS:=.in.sh} 
-	$(SHPP) $(SHPPFLAGS) -Dlibdir=$(libdir)/$(APPNAME) $(@).in.sh -o $(@)
+	$(SHPP) $(SHPPFLAGS)  $(@).in.sh -o $(@)
 
 
 install: $(SCRIPTS)	
