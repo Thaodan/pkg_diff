@@ -1,14 +1,15 @@
-include ../rules.mk
+include src.base.mk
 VER	     	 	= $(shell ./../tools/git_revgen)
 SCRIPTS			= pkg_diff
+
 all: $(SCRIPTS) lib
 
-config.shh: 
+$(config_shh): 
 	@echo $@: generating 
 	@echo '#\\define VER=$(VER)' > $@
 	@echo '#\\define libdir=$(libdir)' >> $@
 
-$(SCRIPTS): ${SCRIPTS:=.in.sh} config.shh
+$(SCRIPTS): ${SCRIPTS:=.in.sh} $(config_shh)
 	$(SHPP) $(SHPPFLAGS)\
 		$(@).in.sh  -o $@
 

@@ -1,4 +1,4 @@
-include  ../../../../rules.mk
+include  ../../../src.base.mk
 
 SCRIPTS    = git local
 all: $(SCRIPTS)

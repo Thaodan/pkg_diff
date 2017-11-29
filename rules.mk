@@ -1,5 +1,5 @@
 APPNAME       = pkg_diff
-DIST_ROOT     = $(dir $(lastword $(MAKEFILE_LIST)))
+DIST_ROOT     = $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 TOOLSDIR      = ${DIST_ROOT}tools
 
 DESTDIR       =
