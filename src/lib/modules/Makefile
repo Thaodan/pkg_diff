@@ -3,10 +3,10 @@ SCRIPTS	= source config cache diff
 
 all: $(SCRIPTS) source.d
 
-../../config.shh:
-	$(MAKE) -C ../.. config.shh
+$(config_shh):
+	$(MAKE) -C $(srcdir) $(config_shh)
 
-$(SCRIPTS): ${SCRIPTS:=.in.sh} ../../config.shh
+$(SCRIPTS): ${SCRIPTS:=.in.sh} $(config_shh)
 	$(SHPP) $(SHPPFLAGS) $(@).in.sh -o $(@)
 
 source.d:

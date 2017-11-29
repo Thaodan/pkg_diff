@@ -1,13 +1,13 @@
-include ../../rules.mk
+include ../src.base.mk
 SCRIPTS 	= parse_options debug message \
 			prepare_local download
 
 all: $(SCRIPTS) options modules
 
-../config.shh:
-	$(MAKE) -C .. config.shh
+$(config_shh):
+	$(MAKE) -C $(srcdir) $(config_shh)
 
-$(SCRIPTS): ${SCRIPTS:=.in.sh} ../config.shh
+$(SCRIPTS): ${SCRIPTS:=.in.sh} $(config_shh)
 	$(SHPP) $(SHPPFLAGS) -Dlibdir=$(libdir)/$(APPNAME) $(@).in.sh -o $(@)
 
 options:
