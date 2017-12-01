@@ -9,9 +9,7 @@ $(config_shh):
 	@echo '#\\define VER=$(VER)' > $@
 	@echo '#\\define libdir=$(libdir)' >> $@
 
-$(SCRIPTS): ${SCRIPTS:=.in.sh} $(config_shh)
-	$(SHPP) $(SHPPFLAGS)\
-		$(@).in.sh  -o $@
+include src.body.mk
 
 lib: 
 	$(MAKE) -C lib

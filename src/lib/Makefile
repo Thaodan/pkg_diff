@@ -7,8 +7,7 @@ all: $(SCRIPTS) options modules
 $(config_shh):
 	$(MAKE) -C $(srcdir) $(config_shh)
 
-$(SCRIPTS): ${SCRIPTS:=.in.sh} $(config_shh)
-	$(SHPP) $(SHPPFLAGS) -Dlibdir=$(libdir)/$(APPNAME) $(@).in.sh -o $(@)
+include $(srcdir)/src.body.mk
 
 options:
 	make -C options

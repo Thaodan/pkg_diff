@@ -6,8 +6,7 @@ all: $(SCRIPTS) source.d
 $(config_shh):
 	$(MAKE) -C $(srcdir) $(config_shh)
 
-$(SCRIPTS): ${SCRIPTS:=.in.sh} $(config_shh)
-	$(SHPP) $(SHPPFLAGS) $(@).in.sh -o $(@)
+include $(srcdir)/src.body.mk
 
 source.d:
 	make -C source.d
