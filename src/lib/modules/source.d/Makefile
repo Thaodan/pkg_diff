@@ -1,18 +1,4 @@
-include  ../../../src.base.mk
+BACKEND	= source.d
+SCRIPTS	= git local
 
-SCRIPTS    = git local
-all: $(SCRIPTS)
-
-$(SCRIPTS): ${SCRIPTS:=.in.sh} 
-	$(SHPP) $(SHPPFLAGS)  $(@).in.sh -o $(@)
-
-
-install: $(SCRIPTS)	
-	$(INSTALL) -dm755 $(libdir)/$(APPNAME)/modules/source.d
-	$(INSTALL) -Dm644 $(^) $(libdir)/$(APPNAME)/modules/source.d
-
-clean:
-	rm -f $(SCRIPTS)
-
-.PHONY: clean install
-
+include ../src.backend.mk
