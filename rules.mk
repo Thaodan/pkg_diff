@@ -1,6 +1,6 @@
 APPNAME       = pkg_diff
-DIST_ROOT     = $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
-TOOLSDIR      = ${DIST_ROOT}tools
+DIST_ROOT     := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
+TOOLSDIR      := ${DIST_ROOT}tools
 
 DESTDIR       =
 PREFIX        = /usr/local
